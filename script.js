@@ -5,9 +5,9 @@ const order = prompt(
     "Vanilla,banana,Banana,Oreo,Vanilla,chocolate,vanilla,vanilla,oreo,strawberry,oreo,coffee,catnip,dognip,coffee,coffee,chilli,butter pecan,strawberry,butter pecan,coffee,coffee,toffee"
 )
 
-let orderStats = {}
 
 function startOrder(array) {
+    const orderStats = {}
     const flavors = array.split(",")
     for ( let i = 0 ; i < flavors.length ; i++ ){
         // console.log(i)
@@ -18,7 +18,6 @@ function startOrder(array) {
         }
         orderStats[singleFlavor]++
     }
-    
     console.table(orderStats)
 }
 
