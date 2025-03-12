@@ -7,15 +7,16 @@ const order = prompt(
 
 let orderStats = {}
 
-function startOrder(myFlavors) {
-    const flavors = myFlavors.split(",")
+function startOrder(array) {
+    const flavors = array.split(",")
     for ( let i = 0 ; i < flavors.length ; i++ ){
         // console.log(i)
         // console.log(flavors[i].toLowerCase())
-        if (orderStats[flavors[i].toLowerCase()] == undefined){
-            orderStats[flavors[i].toLowerCase()] = 0
+        const singleFlavor = flavors[i].toLowerCase()
+        if (orderStats[singleFlavor] == undefined){
+            orderStats[singleFlavor] = 0
         }
-        orderStats[flavors[i].toLowerCase()]++
+        orderStats[singleFlavor]++
     }
     
     console.table(orderStats)
