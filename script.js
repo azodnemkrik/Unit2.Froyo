@@ -1,9 +1,24 @@
-// Prompt user for flavors
+// Prompt user for order
 
-const flavors ="What are you flavors?";
-let f = prompt(flavors);
-showFlavors(f)
+const order = prompt(
+    "Please enter your froyo flavors.",
+    "vanilla,banana,banana,oreo,vanilla,chocolate,vanilla,vanilla,oreo,strawberry,oreo,coffee,catnip,dognip,coffee,coffee,chilli,butter pecan,strawberry,butter pecan,coffee,coffee,toffee"
+)
 
-function showFlavors(f) {
-    console.log("Your flavors are: " + f)
+let orderStats = {}
+
+function startOrder(myFlavors) {
+    const flavors = myFlavors.split(",")
+    for ( let i = 0 ; i < flavors.length ; i++ ){
+        console.log(i)
+        console.log(flavors[i])
+        if (orderStats[flavors[i]] == undefined){
+            orderStats[flavors[i]] = 0
+        }
+        orderStats[flavors[i]]++
+    }
+    
+    console.table(orderStats)
 }
+
+startOrder(order)
